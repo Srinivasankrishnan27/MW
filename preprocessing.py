@@ -104,15 +104,3 @@ rm_na_cols=['device_category','gender','CELLULAR','WIFI','rog_m',
                           'ANDROID-PERSONALIZATION', 'ANDROID-PHOTOGRAPHY','ANDROID-PRODUCTIVITY',
                           'ANDROID-SHOPPING', 'ANDROID-SOCIAL','ANDROID-SPORTS', 'ANDROID-TOOLS',
                           'ANDROID-TRAVEL_AND_LOCAL','ANDROID-VIDEO_PLAYERS','ANDROID-WEATHER']
-
-m = drop_cols(df=m, cols=rm_na_cols)
-print(len(m))
-
-m = encode_cols(df=m, cols=['gender','device_category'])
-
-m.
-regr = RandomForestRegressor(criterion='mae',random_state=0,n_jobs=-1)
-
-X = m[m.columns.difference(['age','ifa'])]
-y = m.loc[:, ('age')]
-regr.fit(X, y)
